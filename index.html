@@ -11,11 +11,11 @@
     --surface:#f1eeff;
     --card:#ffffff;
     --border:#e0d9f7;
-    --accent1: #00e5ff;
-    --accent2: #ff4d6d;
-    --accent3: #aaff00;
+    --accent1: #22d3ee;
+    --accent2: #ef4444;
+    --accent3: #22c55e;
     --text:#1a1433;
-    --muted:#a096c0;
+    --muted:#7c7aa0;
     --first: #00e5ff;
     --second: #b47fff;
     --third: #ff8c42;
@@ -28,7 +28,7 @@
   body {
     background:var(--bg);
     color: var(--ink);
-    font-family: 'Nunito', sans-serif;font-ze: 18px;
+    font-family: 'Nunito', sans-serif;font-size: 18px;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -44,12 +44,9 @@
   }
 
   .container {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
-    position: relative;
-    z-index: 1;
-  }
+  max-width: 1000px;
+  padding: 48px 24px 100px;
+}
 
   /* HEADER */
   header {
@@ -219,7 +216,8 @@
   .question-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     padding: 32px;
     margin-bottom: 20px;
     animation: fadeUp 0.3s ease both;
@@ -266,20 +264,17 @@
     letter-spacing: 1px;
   }
 
-  .question-text {
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin-bottom: 24px;
-    color: var(--ink);
-  }
+ .question-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
 
   .blank {
     display: inline-block;
     min-width: 140px;
-    border-bottom: 2px solid var(--accent1);
+    border-bottom: 3px solid var(--accent1);
     color: var(--accent1);
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono', monospace;font-size: 1.1rem; font-weight: 700
     padding: 0 4px;
     text-align: center;
   }
@@ -313,35 +308,52 @@
 
   @media (max-width: 500px) { .options-grid { grid-template-columns: 1fr; } }
 
-  .option-btn {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 12px 16px;
-    color: var(--ink);
-    font-family: 'Space Mono', monospace;
-    font-size: 15px;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.15s;
-    line-height: 1.4;
-  }
+ .option-btn {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
-  .option-btn:hover:not(:disabled) { border-color: var(--accent1); color: var(--accent1); }
-  .option-btn.correct { border-color: var(--accent3); color: var(--accent3); background: rgba(170,255,0,0.08); }
-  .option-btn.incorrect { border-color: var(--accent2); color: var(--accent2); background: rgba(255,77,109,0.08); }
-  .option-btn:disabled { cursor: default; }
+.option-btn:hover:not(:disabled) {
+  border-color: var(--accent1);
+  background: rgba(0,229,255,0.08);
+  transform: translateY(-2px);
+}
+
+.option-btn.correct {
+  border-color: #22c55e;
+  background: rgba(34,197,94,0.12);
+  color: #16a34a;
+}
+
+.option-btn.incorrect {
+  border-color: #ef4444;
+  background: rgba(239,68,68,0.12);
+  color: #dc2626;
+}
 
   /* FEEDBACK */
-  .feedback {
-    padding: 14px 16px;
-    border-radius: 2px;
-    font-size: 15px;
-    margin-top: 12px;
-    display: none;
-    animation: fadeUp 0.2s ease both;
-    line-height: 1.6;
-  }
+ .feedback {
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.feedback.correct {
+  background: rgba(34,197,94,0.12);
+  border: 2px solid #22c55e;
+  color: #16a34a;
+}
+
+.feedback.incorrect {
+  background: rgba(239,68,68,0.12);
+  border: 2px solid #ef4444;
+  color: #dc2626;
+}
 
   .feedback.correct { background: rgba(170,255,0,0.08); border: 1px solid var(--accent3); color: var(--accent3); }
   .feedback.incorrect { background: rgba(255,77,109,0.08); border: 1px solid var(--accent2); color: var(--accent2); }
@@ -386,10 +398,18 @@
   .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
 
   .btn-next {
-    border-color: var(--accent3);
-    color: var(--accent3);
-  }
-  .btn-next:hover { background: var(--accent3); color: var(--bg); }
+  border-color: var(--accent3);
+  color: var(--accent3);
+  font-size: 14px;
+  padding: 14px 28px;
+  border-radius: 6px;
+}
+
+.btn-next:hover {
+  background: var(--accent3);
+  color: #111;
+  transform: translateY(-2px);
+}
 
   /* SCORE CARD */
   .score-card {
