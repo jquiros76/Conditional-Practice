@@ -28,7 +28,7 @@
   body {
     background:var(--bg);
     color: var(--ink);
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;font-ze: 18px;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -61,7 +61,7 @@
   .badge {
     display: inline-block;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 15px;
     letter-spacing: 3px;
     color: var(--accent3);
     border: 1px solid var(--accent3);
@@ -71,7 +71,7 @@
   }
 
   h1 {
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: clamp(5rem, 8vw, 5.5rem);
     font-weight: 800;
     line-height: 1.05;
     margin-bottom: 8px;
@@ -84,7 +84,7 @@
 
   .subtitle {
     color:var(--muted);
-    font-size: 15px;
+    font-size: 18px;
   }
 
   /* TABS */
@@ -106,7 +106,7 @@
     background: transparent;
     color:var(--muted);
     font-family: 'Nunito', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 2px;
@@ -153,14 +153,14 @@
   .type-mixed .theory-dot { background: var(--accent3); box-shadow: 0 0 8px var(--accent3); }
 
   .theory-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--ink);
   }
 
   .formula {
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 15px;
     background: var(--card);
     border-left: 3px solid;
     padding: 12px 16px;
@@ -174,13 +174,13 @@
   .type-3rd .formula { border-color: var(--third); }
 
   .usage-text {
-    font-size: 13px;
+    font-size: 15px;
     color:var(--muted);
     line-height: 1.6;
   }
 
   .example-sentence {
-    font-size: 13px;
+    font-size: 15px;
     color: var(--ink);
     margin-top: 8px;
     padding: 8px 12px;
@@ -210,7 +210,7 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 14px;
     color:var(--muted);
     margin-bottom: 8px;
   }
@@ -248,7 +248,7 @@
 
   .q-type-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     letter-spacing: 1.5px;
     padding: 3px 8px;
     border: 1px solid;
@@ -261,13 +261,13 @@
 
   .q-mode-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 13px;
     color:var(--muted);
     letter-spacing: 1px;
   }
 
   .question-text {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 24px;
@@ -292,7 +292,7 @@
     border-radius: 2px;
     padding: 14px 16px;
     font-family: 'Space Mono', monospace;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--ink);
     outline: none;
     transition: border-color 0.2s;
@@ -320,7 +320,7 @@
     padding: 12px 16px;
     color: var(--ink);
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 15px;
     cursor: pointer;
     text-align: left;
     transition: all 0.15s;
@@ -336,7 +336,7 @@
   .feedback {
     padding: 14px 16px;
     border-radius: 2px;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 12px;
     display: none;
     animation: fadeUp 0.2s ease both;
@@ -365,7 +365,7 @@
     border: 1px solid;
     background: transparent;
     font-family: 'Nunito', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 2px;
@@ -402,7 +402,7 @@
   }
 
   .score-big {
-    font-size: 80px;
+    font-size: 90px;
     font-weight: 800;
     line-height: 1;
     margin-bottom: 8px;
@@ -410,7 +410,7 @@
 
   .score-label {
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 15px;
     color:var(--muted);
     letter-spacing: 2px;
     margin-bottom: 32px;
@@ -424,8 +424,8 @@
   }
 
   .score-stat { text-align: center; }
-  .score-stat-num { font-size: 28px; font-weight: 800; }
-  .score-stat-label { font-size: 12px; color:var(--muted); font-family: 'Space Mono', monospace; }
+  .score-stat-num { font-size: 30px; font-weight: 800; }
+  .score-stat-label { font-size: 15px; color:var(--muted); font-family: 'Space Mono', monospace; }
 
   /* ANIMATIONS */
   @keyframes fadeDown {
@@ -576,7 +576,7 @@ function renderQuestion() {
     inputHtml = `
       <input class="answer-input" id="answerInput" placeholder="Type your answer..." autocomplete="off"
         onkeydown="if(event.key==='Enter' && !${answered})checkAnswer()">
-      <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);">💡 Hint: ${q.hint}</div>`;
+      <div style="font-family:'Space Mono',monospace;font-size:15px;color:var(--muted);">💡 Hint: ${q.hint}</div>`;
   } else {
     const opts = shuffle([...q.options]);
     inputHtml = `<div class="options-grid">${opts.map(o =>
